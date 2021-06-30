@@ -7,6 +7,7 @@ According to the official site, users on Airbnb can book a place to stay in 100,
 3. Which country will a new user make as the first booking?  
 
 By accurately predicting the first travel destination, Airbnb can share more personalized content to each new user, increase user experience, decrease the average time to first booking, and better forecast demand.
+
 Data source: [Kaggle Airbnb New User Booking Data](https://www.kaggle.com/c/airbnb-recruiting-new-user-bookings/data)
 
 There are 12 possible outcomes of the destination country: 'US', 'FR', 'CA', 'GB', 'ES', 'IT', 'PT', 'NL','DE', 'AU', 'NDF' (no destination found), and 'other'. 'NDF' is different from 'other' because 'other' means there was a booking, but is to a country not included in the list, while 'NDF' means there wasn't a booking.  
