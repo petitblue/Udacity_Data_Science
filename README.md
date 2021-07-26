@@ -27,14 +27,14 @@ As the data is over 100MB, I read the data from Kaggle. And the script is run in
 4. Modeling and Evaluation
 
 ##### Library Used
-Panda
-Numpy
-Sklearn
+Panda  
+Numpy  
+Sklearn  
 
 ##### File description
 **Airbnb new user booking prediction.ipynb**
-This file contains all the python code of the project.
-**'Submission.csv'**
+This file contains all the python code of the project.  
+**'Submission.csv'**  
 Prediction result
 
 ##### Summary of Analysis Results
