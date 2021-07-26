@@ -50,7 +50,7 @@ The predicted results are exported a file 'Submission.csv'
 The result earns a score of 0.86414 in Kaggle
 
 ### Blog Post Link 
-Based on the EDA and modeling, I wrote an article: [What are Airbnb New User’s First Booking Destination ?](https://medium.com/@dengluyan/what-are-airbnb-new-users-first-booking-destination-9bf70ba50a57) to demonstrate my findings and solve the problems raised in the begining. 
+Based on the EDA and modeling, I wrote an article: [What are Airbnb New User’s First Booking Destination ?](https://medium.com/@dengluyan/what-are-airbnb-new-users-first-booking-destination-9bf70ba50a57). It demonstrates my findings and solve the problems asked in the beginning of this file.
 
 
 ### Reference
