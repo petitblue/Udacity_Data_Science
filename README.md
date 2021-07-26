@@ -49,6 +49,10 @@ This project uses GXBoost to build the prediction model. The NDCG score is 0.833
 The predicted results are exported a file 'Submission.csv'
 The result earns a score of 0.86414 in Kaggle
 
+### Blog Post Link 
+Based on the EDA and modeling, I wrote an article to demonstrate my findings and solve the problems raised in the begining. 
+https://medium.com/@dengluyan/what-are-airbnb-new-users-first-booking-destination-9bf70ba50a57
+
 ### Reference
 1. Tianqi Chen and Carlos Guestrin. XGBoost: A Scalable Tree Boosting System. In 22nd SIGKDD Conference on Knowledge Discovery and Data Mining, 2016
 2. Data Science in 5 Minutes: What is One Hot Encoding?https://www.educative.io/blog/one-hot-encodin
