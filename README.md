@@ -45,9 +45,9 @@ Prediction result
 5. The top 10 influential features are: date of account created and time of first activation, sec_elasped(the time spend in online action), age, gender, signup method, first affiliate tracked, first device type and first browser, signup flow.
 
 ### Prediction Result
-This project uses GXBoost to build the prediction model. The NDCG score is 0.8  CV score is 0.82
+This project uses GXBoost to build the prediction model. The NDCG score is 0.833  CV score is 0.823
 The predicted results are exported a file 'Submission.csv'
-The result earns a score of 0.86268 in Kaggle
+The result earns a score of 0.86414 in Kaggle
 
 ### Reference
 1. Tianqi Chen and Carlos Guestrin. XGBoost: A Scalable Tree Boosting System. In 22nd SIGKDD Conference on Knowledge Discovery and Data Mining, 2016
