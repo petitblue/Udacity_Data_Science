@@ -45,8 +45,13 @@ Prediction result
 5. The top 10 influential features are: date of account created and time of first activation, sec_elasped(the time spend in online action), age, gender, signup method, first affiliate tracked, first device type and first browser, signup flow.
 
 ### Prediction Result
+This project uses GXBoost to build the prediction model. The NDCG score is 0.8  CV score is 0.82
 The predicted results are exported a file 'Submission.csv'
 The result earns a score of 0.86268 in Kaggle
 
-
+### Reference
+1. Tianqi Chen and Carlos Guestrin. XGBoost: A Scalable Tree Boosting System. In 22nd SIGKDD Conference on Knowledge Discovery and Data Mining, 2016
+2. Data Science in 5 Minutes: What is One Hot Encoding?https://www.educative.io/blog/one-hot-encodin
+3. Kurtis Pykes Normalized discounted cumulative gain https://towardsdatascience.com/normalized-discounted-cumulative-gain-37e6f75090e9
+Kaggle — Airbnb New User Prediction(Top 24%) https://chriskang028.medium.com/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E5%B0%88%E6%A1%88-kaggle-airbnb-new-user-prediction-top-24-6d337dbcb772
 
