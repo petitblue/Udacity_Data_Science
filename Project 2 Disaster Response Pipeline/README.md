@@ -9,12 +9,13 @@ This project is part of the [Udacity Data Science Nano Degree Program](https://w
 ## 2. [Project-Components]
 There are three components in the project.
 ### 1. ETL Pipeline
-
+Loads the message.csv and categories.csv files and merges two datasets
+clean data and stores it in a SQLite database
 ### 2. ML Pipeline
+Build a test processing and maching learning pipline
+Train and tunes a model using GridSearchCV
 ### 3. Flask Web App
-a machine learning pipeline to categorize these events so that you can send the messages to an appropriate disaster relief agency.
-analyze disaster data from Figure Eight to build a model for an API that classifies disaster messages.
-Your project will include a web app where an emergency worker can input a new message and get classification results in several categories. The web app will also display visualizations of the data.
+There is a web app where an emergency worker can input a new message and get classification results in several categories. The web app will also display visualizations of the data.
 
 
 ## 2. [Installation]()
