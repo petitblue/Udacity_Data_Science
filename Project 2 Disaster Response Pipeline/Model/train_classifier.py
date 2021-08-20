@@ -125,7 +125,16 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
-    pass
+        '''
+    Function to save a pickle file of the model
+    
+    INPUT:
+        Model:the classification model
+        model_filepath: str, path of pickle file
+        
+    '''
+    with open(model_filepath,'wb') as f:
+        pickle.dump(model,f)
 
 
 def main():
