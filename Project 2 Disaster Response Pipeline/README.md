@@ -19,5 +19,30 @@ There is a web app where an emergency worker can input a new message and get cla
 
 
 ## 2. [Installation]()
+###Devendencies :
+    [python (>=3.6)](https://www.python.org/downloads/)
+    [pandas](https://pandas.pydata.org/)
+    [numpy](https://numpy.org/)
+    [sqlalchemy](https://www.sqlalchemy.org/)
+    [nltk](https://www.nltk.org/)
+    [sys](https://docs.python.org/3/library/sys.html)
+    [plotly](https://plotly.com/python/)
+    [sklearn](https://sklearn.org/)
+    [joblib](https://joblib.readthedocs.io/en/latest/)
+    [flask](https://flask.palletsprojects.com/en/2.0.x/)
+ ###Download and Installation
+ git clone https://github.com/petitblue
+ 
+ While in the project's root directory disaster-response-pipeline run the ETL pipeline that cleans and stores data in database.
+ 
+ python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
+
+ Next, run the ML pipeline that trains the classifier and save it.
+  python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
+Next, change directory into the app directory and run the Python file run.py.
+cd app
+python run.py
+Finally, go to http://0.0.0.0:3001/ or http://localhost:3001/ in your web-browser.
+Type a message input box and click on the Classify Message button to see the various categories that your message falls into.
 ## 3. [liscense]()
 
