@@ -19,7 +19,7 @@ There is a web app where an emergency worker can input a new message and get cla
 
 
 ## 2. [Installation]()
-###Devendencies :
+### Devendencies :
     [python (>=3.6)](https://www.python.org/downloads/)  
     [pandas](https://pandas.pydata.org/)  
     [numpy](https://numpy.org/)  
@@ -30,7 +30,7 @@ There is a web app where an emergency worker can input a new message and get cla
     [sklearn](https://sklearn.org/)  
     [joblib](https://joblib.readthedocs.io/en/latest/)  
     [flask](https://flask.palletsprojects.com/en/2.0.x/)  
- ###Download and Installation
+ ### Download and Installation
  git clone https://github.com/petitblue
  
  While in the project's root directory disaster-response-pipeline run the ETL pipeline that cleans and stores data in database.
