@@ -31,7 +31,7 @@ There is a web app where an emergency worker can input a new message and get cla
    - [joblib](https://joblib.readthedocs.io/en/latest/)  
    - [flask](https://flask.palletsprojects.com/en/2.0.x/)  
  ### Download and Installation
- git clone https://github.com/petitblue
+ git clone https://github.com/petitblue/project2-disaster-response-pipeline
  
  While in the project's root directory disaster-response-pipeline run the ETL pipeline that cleans and stores data in database.
  
