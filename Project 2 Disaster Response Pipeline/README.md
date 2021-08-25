@@ -20,16 +20,16 @@ There is a web app where an emergency worker can input a new message and get cla
 
 ## 2. [Installation]()
 ###Devendencies :
-    [python (>=3.6)](https://www.python.org/downloads/)
-    [pandas](https://pandas.pydata.org/)
-    [numpy](https://numpy.org/)
-    [sqlalchemy](https://www.sqlalchemy.org/)
-    [nltk](https://www.nltk.org/)
-    [sys](https://docs.python.org/3/library/sys.html)
-    [plotly](https://plotly.com/python/)
-    [sklearn](https://sklearn.org/)
-    [joblib](https://joblib.readthedocs.io/en/latest/)
-    [flask](https://flask.palletsprojects.com/en/2.0.x/)
+    [python (>=3.6)](https://www.python.org/downloads/)  
+    [pandas](https://pandas.pydata.org/)  
+    [numpy](https://numpy.org/)  
+    [sqlalchemy](https://www.sqlalchemy.org/)  
+    [nltk](https://www.nltk.org/)  
+    [sys](https://docs.python.org/3/library/sys.html)  
+    [plotly](https://plotly.com/python/)  
+    [sklearn](https://sklearn.org/)  
+    [joblib](https://joblib.readthedocs.io/en/latest/)  
+    [flask](https://flask.palletsprojects.com/en/2.0.x/)  
  ###Download and Installation
  git clone https://github.com/petitblue
  
