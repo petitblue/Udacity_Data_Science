@@ -11,6 +11,7 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 import pickle
 from sklearn.pipeline import Pipeline
+from sklearn.pipeline import FeatureUnion
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.multioutput import MultiOutputClassifier
@@ -19,7 +20,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.metrics import classification_report
 from sklearn.model_selection import GridSearchCV
-from sklearn.pipeline import FeatureUnion
+from xgboost import XGBClassifier
+from custom_extractor import DisasterWordExtractor()
 
 def load_data(database_filepath):
     '''
@@ -88,18 +90,18 @@ def build_model():
     
     OUTPUT: cv:classification model
     '''
-    pipeline = Pipeline([
-        ('features',FeatureUnion([
-        ('text_pipeline',Pipeline([
-        ('vect',CountVectorizer(tokenizer=tokenize)),
-        ('tfidf',TfidfTransformer())])),
-        ('disaster_words',DisasterWordExtractor())
+    xgb_pipeline = Pipeline([
+        ('features', FeatureUnion([
+            ('text_pipeline', Pipeline([
+                ('vect', CountVectorizer(tokenizer=tokenize)),
+                ('tfidf', TfidfTransformer())])),
+            ('disaster_words', DisasterWordExtractor())
         ])),
-        ('clf',MultiOutputClassifier(estimator = KNeighborsClassifier(n_jobs=-1)))
-        ])
+        ('clf', MultiOutputClassifier(estimator=XGBClassifier(max_depth=6)))
+    ])
     parameters = parameters = { 'clf__estimator__n_estimators': [100,150]}
     # create grid search object
-    model = GridSearchCV(pipeline, param_grid=parameters, scoring='recall_micro', cv=4)
+    model = GridSearchCV(xgb_pipeline, param_grid=parameters, scoring='recall_micro', cv=4)
     
     return model
 
@@ -107,10 +109,10 @@ def evaluate_model(model, X_test, Y_test, category_names):
     '''
     Function to evaluate the model for each category of the dataset
     INPUT: 
-        -model, the classification model
-        -X_test, the feature variable
-        -Y_test,the target variable
-        -category_names, list
+        -model: the classification model
+        -X_test: the feature variable
+        -Y_test: the target variable
+        -category_names: list
     OUTPUT:
         Classification report and accuracy score
     '''
@@ -125,16 +127,15 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
-        '''
-    Function to save a pickle file of the model
-    
-    INPUT:
-        Model:the classification model
-        model_filepath: str, path of pickle file
-        
     '''
-    with open(model_filepath,'wb') as f:
-        pickle.dump(model,f)
+    The function to save machine learning pipeline 'model' to local path
+    INPUT:
+        model: Machine learning pipeline
+        model_filepath:  the name of the local path to save the model
+    OUTPUT:
+        none
+    '''
+    pickle.dump(model, open(model_filepath, 'wb'))
 
 
 def main():
