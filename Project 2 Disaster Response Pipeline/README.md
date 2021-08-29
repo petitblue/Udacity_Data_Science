@@ -39,7 +39,7 @@ There is a web app where an emergency worker can input a new message and get cla
  python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
 
  Next, run the ML pipeline that trains the classifier and save it.
-  python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
+  python model/train_classifier.py data/DisasterResponse.db model/classifier.pkl
 Next, change directory into the app directory and run the Python file run.py.
 cd app
 python run.py
