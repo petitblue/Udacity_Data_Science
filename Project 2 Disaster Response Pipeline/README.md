@@ -30,7 +30,7 @@ There is a web app where an emergency worker can input a new message and get cla
    - [sklearn](https://sklearn.org/)  
    - [joblib](https://joblib.readthedocs.io/en/latest/)  
    - [flask](https://flask.palletsprojects.com/en/2.0.x/)  
-   - [WordCloud](https://pypi.org/project/wordcloud/)
+   
  ### Download and Installation
  git clone https://github.com/petitblue/udacity_data_science/project2-disaster-response-pipeline
  
