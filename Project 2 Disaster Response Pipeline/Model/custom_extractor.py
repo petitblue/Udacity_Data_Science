@@ -24,14 +24,16 @@ def replace_url(text):
         text = text.replace(url, 'urlplaceholder')
     return text
 
-    def tokenize(text):
-    '''
+def tokenize(text):
+    """
     processed text strings
     INPUT: text: string
     OUTPUT: clean_tokens  a list of processed words
-    '''
-    # Case Normalization
-    text = text.lower()  # convert to lowercase
+    """
+    # replace urls in text
+    text = replace_url(text)
+    # Case Normalization and remove punctuation
+    text = re.sub(r'[^a-zA-Z0-9]', ' ', text).lower()
     # tokenize text
     tokens = word_tokenize(text)
     token_list = []
@@ -41,13 +43,11 @@ def replace_url(text):
             token_list.append(tok)
     # initiate lemmatizer
     lemmatizer = WordNetLemmatizer()
-
     # iritate through each token
     clean_tokens = []
     for tok in token_list:
         # lemmatize and remove leading and tailing white space
         clean_tok = lemmatizer.lemmatize(tok).strip()
-
         clean_tokens.append(clean_tok)
     return clean_tokens
 
@@ -61,12 +61,12 @@ class DisasterWordExtractor(BaseEstimator, TransformerMixin):
         """
         # Build a list of words that are constantly used during a disaster event
         words = ['food', 'hunger', 'hungry', 'starving', 'water', 'drink',
-                 'eat', 'thrist',
-                 'need', 'hospital', 'medicine', 'medicial', 'ill', 'pain',
+                 'eat', 'thirst',
+                 'need', 'hospital', 'medicine', 'medical', 'ill', 'pain',
                  'disease', 'injured', 'falling',
                  'wound', 'dying', 'death', 'dead', 'aid', 'help',
                  'assistance', 'cloth', 'cold', 'wet', 'shelter',
-                 'harricane', 'earthquake', 'flood', 'live', 'alive', 'child',
+                 'hurricane', 'earthquake', 'flood', 'live', 'alive', 'child',
                  'people', 'shortage', 'blocked',
                  'gas', 'pregnant', 'baby'
                  ]
@@ -77,12 +77,8 @@ class DisasterWordExtractor(BaseEstimator, TransformerMixin):
         # Get the stem words of each word in  lemmatized_words
         stem_disaster_words = [PorterStemmer().stem(w) for w in
                                lemmatized_words]
-
-        # get list of all urls using regex
-        detected_urls = re.findall(url_regex, text)
         # replace each url in text strings with placeholder
-        for url in detected_urls:
-            text = text.replace(url, 'urlplaceholder')
+        text = replace_url(text)
 
         # tokenize the text
         clean_tokens = tokenize(text)

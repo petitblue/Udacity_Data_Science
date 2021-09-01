@@ -4,8 +4,7 @@ import numpy as np
 from sqlalchemy import create_engine
 import re
 import nltk
-nltk.download(['punkt','stopwords', 'wordnet'])
-
+nltk.download(['punkt', 'stopwords', 'wordnet'])
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
@@ -21,7 +20,7 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.metrics import classification_report
 from sklearn.model_selection import GridSearchCV
 from xgboost import XGBClassifier
-from custom_extractor import DisasterWordExtractor()
+from custom_extractor import DisasterWordExtractor
 
 def load_data(database_filepath):
     '''
@@ -37,10 +36,29 @@ def load_data(database_filepath):
     X = df['message'].values
     y = df[df.columns[4:]]
     category_names = y.columns.tolist()
-    return X, y
+    return X, y, category_names
+
+
+url_regex = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+
+
+def replace_url(text):
+    '''
+    Replace url with 'urlplaceholder' in text
+    INPUT:
+        text: string
+    OUTPUT:
+        text: edited string
+    '''
+    detected_urls = re.findall(url_regex, text)
+    # replace each url in text strings with placeholder
+    for url in detected_urls:
+        text = text.replace(url, 'urlplaceholder')
+    return text
+
 
 def tokenize(text):
-    '''
+    """
         Function to processed text in string format, and output a list of words
         1. repalce all urls with 'urlplaceholder'
         2. case normalization and remove punctuation
@@ -52,9 +70,10 @@ def tokenize(text):
         OUTPUT:
             -clean_tokens, list of processed words
     
-    '''
+    """
+
     # get list of all urls using regex
-    detected_urls = re.findall(url_regex,text)
+    detected_urls = re.findall(url_regex, text)
     # replace each url in text strings with placeholder
     for url in detected_urls:
         text = text.replace(url, 'urlplaceholder')
@@ -105,6 +124,7 @@ def build_model():
     
     return model
 
+
 def evaluate_model(model, X_test, Y_test, category_names):
     '''
     Function to evaluate the model for each category of the dataset
@@ -124,7 +144,6 @@ def evaluate_model(model, X_test, Y_test, category_names):
         print(classification_report(Y_test.iloc[:, i].values, y_pred[:, i]))
         print('Accuracy {}\n\n'.format(accuracy_score(Y_test.iloc[:, i].values, y_pred[:, i])))
     
-
 
 def save_model(model, model_filepath):
     '''
