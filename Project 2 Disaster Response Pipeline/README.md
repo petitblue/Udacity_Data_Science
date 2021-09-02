@@ -6,7 +6,7 @@
 4. [liscense](#-liscense)
 ## 1. Project Overview
 This project is part of the [Udacity Data Science Nano Degree Program](https://www.udacity.com/course/data-scientist-nanodegree--nd025)and supported by [Appen](https://appen.com/). This project will analyze a [data set](https://github.com/petitblue/Udacity_Data_Science/tree/main/Project%202%20Disaster%20Response%20Pipeline/data) containing real messages that were sent during disaster events. Those messages are sent from social media or from disaster response organizations. This project will build a ETL pipeline to load and process data, and a machine learning pipeline to classify those messages so as to send them to an appropriate disaster relief agency.
-## 2. [Project Components](#README)
+## 2. Project Components
 There are three components in the project.
 ### 1. ETL Pipeline
 Loads the message.csv and categories.csv files and merges two datasets
@@ -18,7 +18,7 @@ Train and tunes a model using GridSearchCV
 There is a web app where an emergency worker can input a new message and get classification results in several categories. The web app will also display visualizations of the data.
 
 
-## 2. [Installation]()
+## 3. Installation
 ### Devendencies :
    - [python (>=3.6)](https://www.python.org/downloads/)  
    - [pandas](https://pandas.pydata.org/)  
@@ -45,5 +45,5 @@ cd app
 python run.py
 Finally, go to http://0.0.0.0:3001/ or http://localhost:3001/ in your web-browser.
 Type a message input box and click on the Classify Message button to see the various categories that your message falls into.
-## 3. [liscense]()
+## 3. liscense
 
