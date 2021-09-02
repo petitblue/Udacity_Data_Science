@@ -1,6 +1,6 @@
 # Disaster Response Pipeline Project
 ## Table of Contents
-1. [Project Overview](#-Project-Overview)
+1. [Project Overview](#Project-Overview)
 2. [Project Components](#-Project-Components)
 3. [Installation](#-Installation)
 4. [liscense](#-liscense)
